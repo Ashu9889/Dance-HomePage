@@ -2,9 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
-  
- 
 }
 body{
     background-color:beige;
@@ -12,24 +9,36 @@ body{
 
 .navbar-container{
     display: flex;
-    margin: 70px 0px 0px 82px ;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
     z-index: 1;
+    padding-top:20px ;
+    padding-left: 5%;
 
+}
+.ham{
+    display: none;
+    width: 30px;
+}
+.logo{
+    flex-grow: 1;
 }
 .list{
     list-style-type: none;
-    margin-left: 800px;
+    /* margin-left: 800px; */
 }
 .list-item{
     float: left;
     padding: 0px 20px ;
 }
-hr{
-    position: absolute;
-    width: 25%;
-    /* display: inline-block; */
-    top: 83px;
-    right: 546px;
+.hr{
+    
+    width: 20%;
+    height: 1px;
+    background-color: black;
+    margin-block: auto;
+
 }
 .brand-logo{
     width: 117px;
@@ -37,38 +46,46 @@ hr{
 .section{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
 }
 
 .right-section{
-    /* flex-grow: 1; */
-    width: 50%;
+    width: 30%;
+    position: relative;
+    top: -64px;
+    z-index: -1;
+
 }
 .right-section img{
-    width: 35%;
-    /* height: 100vh; */
-    top: 0px;
-    z-index: -1;
-    position: absolute;
+    width: 100%;
+    height: 110%;
  
 }
 .left-section{
+
     display: flex;
     flex-direction: column;
+    width: 67%;
+    padding-right: 15px;
+    justify-content: space-between;
+    gap: 30px;
+
 }
 
 .l-sec{
 
     display: flex;
-    flex-wrap: wrap;    
-    position: relative;
-    margin-left: 581px;
-    height: 300px;
-    
-    
+    flex-wrap: wrap;
+    justify-content: space-between;    
 }
-.l-sec h1{
-    font-size: 130px;
+.package{
+    width: 45%;
+    flex-grow: 1;
+    /* margin-left: -172px; */
+}
+.package h1{
+    font-size: 8rem;
     line-height: 100px;
 }
 .first{
@@ -80,23 +97,30 @@ hr{
 }
 
 .pack{
+    padding-top: 15%;
     float: right;
-    margin: -71px -335px;
+    align-self: flex-end;
+   
 }
 .pack h3{
     font-size: 30px;
-    margin: 18px 0px;
+    
     color: gray;
     font-family:Arial, Helvetica, sans-serif;
     
     
 }
-.package{
-    /* width: 66%; */
-    /* margin-left: -172px; */
+.pack button{
+    margin-top: 20px;
+    padding: 20px 47px ;
+    background-color: black;
+    color: white;
+    font-size: 20px;
 }
+
 .icons{
-    margin: 5px 0px 0px 318px;
+   width: 10%;
+   text-align: center;
 }
 .list-icon{
     list-style-type: none;
@@ -106,19 +130,12 @@ hr{
     width: 20px;
 }
 
-.pack button{
-    margin-top: 20px;
-    padding: 20px 47px ;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-}
+
 .bottom{
-    margin-left: 581px;
-    width: 50%;
-    height: 248px;
-    margin-top: 30px;
+   
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .bottom-list{
@@ -126,9 +143,8 @@ hr{
 }
 
 .bottom-item{
-    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
-    /* use padding-bottom instead of margin-bottom.*/ 
-    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+    position:relative; 
+    margin-bottom: 0; 
     padding-bottom: 2.5em;
     padding-left: 16px;
     color: grey;
@@ -139,16 +155,16 @@ hr{
     content: url('./assets/circle.svg');
     
     position: absolute;
-    left: -22px; /*adjust manually*/
+    left: -22px; 
     top: 0px;
     
 }
 .bottom-item::before{
     content:"";
     position: absolute;
-    left: -16px; /* adjust manually */
+    left: -16px;
     border-left: 1px solid black;
-    height: 100%;
+    height: 190%;
     width: 1px;
 
 }
@@ -158,15 +174,22 @@ ul.bottom-list li:first-child:before {
  }
 
  .bottom-mid{
-    width: 61%;
-    margin-left: 89px;
+    width: 50%;
+   
  }
  
 .bottom-mid .pexels{
-    margin-top: 10px ;
-    width: 444px;
-    height: 190px;
-}.bottom-mid h4{
+    
+    height: 250px;
+    
+}
+
+.pexels img{
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-mid h4{
     font-size: 20px;
     font-family: Poppins;
 }
@@ -175,8 +198,174 @@ ul.bottom-list li:first-child:before {
     width: 35px;
 }
 .arrow{
-    height: 20%;
-    position: absolute;
-    right: 112px;
-    bottom: 80px;
+    width: 5%;
+
+    align-self: center;
 }
+
+.arrow img{
+    width: 100%;
+    height: 150px;
+}
+@media only screen and (max-width:1230px) {
+    .package h1{
+   
+       font-size: 6rem;
+    }
+   
+    .pack h3{
+       font-size: 19px;
+       
+   }
+   .pack button{
+       margin-top: 10px;
+       padding: 15px 30px ;
+       font-size: 15px;
+   }
+   .bottom-item::before{
+       
+       height: 140%;
+   }
+   
+   .bottom-mid .pexels{
+       
+       height: 200px;
+       
+   }
+   .bottom-mid h4{
+       font-size: 15px;
+       font-family: Poppins;
+   }
+   }
+   
+   @media only screen and (max-width:898px) {
+       .package h1{
+      
+          font-size: 4rem;
+          line-height: 60px;
+       }
+      
+       .pack h3{
+          font-size: 15px;
+          
+      }
+      .bottom-item::after{
+   
+       
+       left: -16px; 
+   
+       
+   }
+      .bottom-item::before{
+   
+       left: -10px;
+   
+   
+   }
+      
+      }
+      
+      @media only screen and (max-width:721px) {
+       .navbar-container{
+           
+           padding-right: 5%;
+       
+       }
+   
+      
+   
+       .list-div, .hr{
+           display: none;
+       }
+   
+      
+      
+       .ham{
+           display: inline-block;
+       }
+   
+       .section{
+           flex-direction: column;
+       }
+       .right-section{
+           width: 100%;
+           height: 300px;
+       }
+   
+       .left-section{
+           width: 100%;
+       }
+   
+       .bottom-item{
+           padding-left: 20px;
+       }
+       .bottom-item::after{
+   
+          
+           left: 0px; 
+          
+           
+       }
+       .bottom-item::before{
+          
+           left: 5px;
+       
+       }
+   
+      }
+   
+      @media only  screen and (max-width:470px) {
+       
+       .left-section{
+           flex-direction: column;
+           padding-right: 0px;
+        
+       }
+       .l-sec{
+           justify-content: center;
+           align-items: center;
+           gap: 10px;
+       }
+       .package{
+           width: 100%;
+           text-align: center;
+       }
+       .pack{
+           width: 100%;
+           padding-top: 20px;
+           text-align: center;
+       }
+       .icons{
+           width: 100%;
+       }
+       .list-icon{
+           display: flex;
+           justify-content: space-evenly;
+           flex-wrap: wrap;
+       }
+   
+       .bottom{
+      
+           flex-direction: row;
+            justify-content: space-around;
+            gap: 30px;
+       }
+       .bottom-left{
+           width: 30%;
+       }
+       .bottom-mid{
+           order: -1;
+           width: 100%;
+           text-align: center;
+       }
+       .bottom-item::before{
+       
+           height: 99%;
+           width: 1px;
+       
+       }
+       .arrow{
+           width: 30%;
+       }
+      }
+      
